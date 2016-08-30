@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=750px; user-scalable=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="lib/Swiper/css/swiper.min.css">
+    <script type="text/javascript" src="lib/Angular/angular.min.js"></script>
+    <script type="text/javascript" src="lib/Swiper/js/swiper.min.js"></script>
+    <script type="text/javascript" src="lib/JQ/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+</head>
+<body ng-controller="myC">
+    <header>
+        <div class="nav">
+            <div class="title">菜单</div>
+            <dl class="navigation">
+                <dt ng-repeat="item in items">
+                    <p>
+                        {{ item.name }} <i></i>
+                    </p>
+                    <ul>
+                        <li ng-repeat="list in item.lists">{{ list }}</li>
+                    </ul>
+                </dt>
+            </dl>
+        </div>
+        <div class="heardmain">
+            <a class="menu fl"> <i></i>
+                <i></i>
+                <i></i>
+            </a>
+            <a class="miniNum fr">
+                <i>0</i>
+            </a>
+            <a class="logo fl"></a>
+            <a class="searchbtn fr">
+                <i></i>
+            </a>
+        </div>
+        <div class="searchinput">
+            <i></i>
+            <i></i>
+            <input type="text" placeholder="男子"></div>
+    </header>
+    <section class="banner swiper-container">
+        <ul class="swiper-wrapper">
+            <li class="swiper-slide">
+                <button>立即购买</button>
+            </li>
+            <li class="swiper-slide">
+                <button>立即购买</button>
+            </li>
+            <li class="swiper-slide">
+                <button>立即购买</button>
+            </li>
+        </ul>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination sp1"></div>
+    </section>
+    <section class="hpDynamic">
+        <div class="future" ng-repeat="futrulist in futrulists">
+            <img ng-src="{{ futrulist.img }}">
+            <a class="title" href="javascript:;">{{ futrulist.title }}</a>
+            <a class="subtitle" href="javascript:;">{{ futrulist.subtitle }}</a>
+        </div>
+    </section>
+    <section class="productSuggest">
+        <p>最受欢迎的产品</p>
+        <p>我们拥有众多体育专业产品，这些是其中最受欢迎的</p>
+        <ul class="tabNav">
+            <li class="tabmale tabNavliAC">男子</li>
+            <li class="tabfemale">女子</li>
+        </ul>
+        <div class="male swiper-container">
+            <ul class="swiper-wrapper">
+                <li class="swiper-slide" ng-repeat="productlistm in productlists.male">
+                    <img ng-src="{{ productlistm.img }}">
+                    <p>{{ productlistm.productInfo }}</p>
+                    <a href="javascript:;">{{ productlistm.productLink }}</a>
+                    <p class="price">{{ productlistm.price }}</p>
+                </li>
+            </ul>
+            <div class="swiper-button-next sbn2"></div>
+            <div class="swiper-button-prev sbp2"></div>
+        </div>
+        <div class="female swiper-container">
+            <ul class="swiper-wrapper">
+                <li class="swiper-slide" ng-repeat="productlist in productlists.female">
+                    <img ng-src="{{ productlist.img }}">
+                    <p>{{ productlist.productInfo }}</p>
+                    <a href="javascript:;">{{ productlist.productLink }}</a>
+                    <p class="price">{{ productlist.price }}</p>
+                </li>
+            </ul>
+            <div class="swiper-button-next sbn3"></div>
+            <div class="swiper-button-prev sbp3"></div>
+        </div>
+    </section>
+    <section class="hpClassifyTit">
+        <p class="title">寻找你的adidas</p>
+        <p class="subTitle">探索属于你自己的运动装备</p>
+    </section>
+    <section class="hpClassify">
+        <p class="cf">
+            <a href="javascript:;"> <strong>足球</strong>
+                FOOTBALL
+                <i></i>
+            </a>
+            <a href="javascript:;"> <strong>跑步</strong>
+                RUNNING
+                <i></i>
+            </a>
+        </p>
+        <p class="cf">
+            <a href="javascript:;">
+                <strong>足球</strong>
+                FOOTBALL
+                <i></i>
+            </a>
+            <a href="javascript:;">
+                <strong>跑步</strong>
+                RUNNING
+                <i></i>
+            </a>
+        </p>
+        <p class="cf">
+            <a href="javascript:;">
+                <strong>足球</strong>
+                FOOTBALL
+                <i></i>
+            </a>
+            <a href="javascript:;">
+                <strong>跑步</strong>
+                RUNNING
+                <i></i>
+            </a>
+        </p>
+        <p class="cf">
+            <a href="javascript:;">
+                <strong>足球</strong>
+                FOOTBALL
+                <i></i>
+            </a>
+            <a href="javascript:;">
+                <strong>跑步</strong>
+                RUNNING
+                <i></i>
+            </a>
+        </p>
+    </section>
+    <footer>
+        <a class="backToTop" href="#">返回页面顶部</a>
+        <div class="ftLoginMinicart">
+            <p>
+                <i></i>
+                <a href="javascript:;">登录注册</a>
+            </p>
+            <p>
+                <i></i>
+                <a href="javascript:;">购物袋</a>
+            </p>
+        </div>
+        <div class="ftSelector">
+            <a class="china" href="javascript:;">
+                <img src="images/china.jpg">china
+            </a>
+            <div class="ftQuickLinks">
+                <a href="javascript:;">访客订单管理</a>
+                <a href="javascript:;">隐私政策</a>
+                <a href="javascript:;">法律条款</a>
+            </div>
+        </div>
+        <p class="ftCopy">© 2015 adidas International Trading B.V.</p>
+    </footer>
+</body>
+</html>
